@@ -2,24 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://gwv7qji67kb5" path="res://personajes/jugador/sprites/Jugador/Soldier-Death.png" id="1_ipsso"]
 [ext_resource type="Texture2D" uid="uid://wt4afw2vroyr" path="res://personajes/jugador/sprites/Jugador/Soldier-Idle.png" id="1_krd7i"]
+[ext_resource type="Script" path="res://scripts/jugador.gd" id="1_quydo"]
 [ext_resource type="Texture2D" uid="uid://cyg8g8gwqwb2" path="res://personajes/jugador/sprites/Jugador/Soldier-Attack01.png" id="1_u1sug"]
 [ext_resource type="Texture2D" uid="uid://o7nsmwe213tv" path="res://personajes/jugador/sprites/Jugador/Soldier-Hurt.png" id="2_273hq"]
 [ext_resource type="Texture2D" uid="uid://bxylrry0wcngv" path="res://personajes/jugador/sprites/Jugador/Soldier-Walk.png" id="2_dqys0"]
 [ext_resource type="Texture2D" uid="uid://br6reigo3wvay" path="res://personajes/jugador/sprites/Jugador/Soldier-Attack03.png" id="2_ual6u"]
-
-[sub_resource type="GDScript" id="GDScript_hjmm4"]
-script/source = "extends \"res://scripts/jugador.gd\"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mkbda"]
 atlas = ExtResource("1_u1sug")
@@ -314,10 +301,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4fb8t"]
-size = Vector2(17.5, 17.5)
+size = Vector2(3.75, 3.75)
 
 [node name="Caballero" type="CharacterBody2D"]
-script = SubResource("GDScript_hjmm4")
+script = ExtResource("1_quydo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1.2207e-06, 0.437502)
