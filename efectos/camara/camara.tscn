@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://efectos/camara/camara.gd" id="1_nkkt2"]
 
 [node name="Camara" type="Camera2D"]
-offset = Vector2(0, -100)
-zoom = Vector2(2.5, 2.5)
+offset = Vector2(0, -70)
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 drag_vertical_enabled = true
 drag_top_margin = 1.0
