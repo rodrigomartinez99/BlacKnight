@@ -8,7 +8,7 @@ func _ready():
 	self.process_mode = Node.PROCESS_MODE_ALWAYS
 
 # Función de cambio de escena: target es la ruta hacia la escena a cargar
-func change_scene(target: String, show_menu = false):
+func change_scene(target: String):
 	# Mostramos el canvas y mostramos animación (desde transparente hacia un color)
 	visible = true
 	animation.play("dissolve")
