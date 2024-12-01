@@ -1,39 +1,42 @@
 extends CharacterBody2D
+class_name Enemy
 
-@export var patrol_speed: float = 100.0
-@export var chase_speed: float = 150.0
-@onready var detection_area: Area2D = $Area2D
-@onready var stun_timer: Timer = $Timer
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@export_category("Config")
+@export_group("Opciones")
+@export var health: int = 1
+@export var score: int = 100
 
-var player_reference: Node = null
-var stunned: bool = false
+@export_group("Movimiento")
+@export var speed: int = 16
+@export var gravity: int = 16
 
-func _process(delta):
-	if player_reference and not stunned:
-		chase_player()
-	else:
-		patrol()
+var direction: int = 1
 
-func patrol():
-	animated_sprite.play("motion")
+func _process(_delta):
+	if health > 0:
+		motion_ctrl()
+		
+func motion_ctrl() -> void:
+	$AnimatedSprite2D.scale.x = direction
+	
+	if $AnimatedSprite2D/RayCast2D.is_colliding() or is_on_wall():
+		direction *= -1   
+		
+	velocity.x = direction*speed
+	velocity.y += gravity
 	move_and_slide()
+	
+func damage_ctrl(damage: int)->void:
+	health-=damage
+	if health <= 0:
+		$CollisionShape2D.set_deferred("disabled",true)
+		gravity = 0
+		GLOBAL.score += score 
 
-func chase_player():
-	if player_reference:
-		animated_sprite.play("run")
-		var direction = (player_reference.global_position - global_position).normalized()
-		move_and_slide()
+func _on_area_2d_body_entered(body):
+	if body is Player and health > 0:
+		body.damage_ctrl()
 
-func on_detection_area_body_entered(body: Node):
-	if body.is_in_group("player"):
-		player_reference = body
-
-func on_detection_area_body_exited(body: Node):
-	if body == player_reference:
-		player_reference = null
-
-func on_stun_timer_timeout():
-	stunned = false
-	patrol()
-
+func _on_deteccion_body_entered(body):
+	if body is Player:
+		$AnimatedSprite2D.set_animation("ojo-run")

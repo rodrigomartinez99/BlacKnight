@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://0i13or11jbbk"
+path="res://.godot/imported/Fantasy Medieval Music - Dance with Dragons.mp3-9594c43734c20c0a2625f036153dc78e.mp3str"
+
+[deps]
+
+source_file="res://efectos/Fondo/Fantasy Medieval Music - Dance with Dragons.mp3"
+dest_files=["res://.godot/imported/Fantasy Medieval Music - Dance with Dragons.mp3-9594c43734c20c0a2625f036153dc78e.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

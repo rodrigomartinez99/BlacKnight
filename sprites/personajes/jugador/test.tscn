@@ -1,25 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmjsdmvv2xpe6"]
+[gd_scene load_steps=5 format=3 uid="uid://dmjsdmvv2xpe6"]
 
 [ext_resource type="PackedScene" uid="uid://un8ioippgal5" path="res://sprites/personajes/jugador/jugador.tscn" id="1_1hamc"]
 [ext_resource type="PackedScene" uid="uid://c8osupo8k8ldj" path="res://sprites/personajes/enemigos/Ojo/ojo.tscn" id="2_437s6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bikxd"]
-size = Vector2(966.5, 25)
+size = Vector2(354.156, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_snms6"]
 
 [node name="Test" type="Node2D"]
 position = Vector2(34, 179)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-collision_layer = 4
+collision_layer = 8
 collision_mask = 3
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(437, 26)
+position = Vector2(275.078, 26)
 shape = SubResource("RectangleShape2D_bikxd")
 
-[node name="Caballero" parent="." instance=ExtResource("1_1hamc")]
-position = Vector2(2, -2)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(356, 2)
+shape = SubResource("RectangleShape2D_snms6")
 
 [node name="Ojo" parent="." instance=ExtResource("2_437s6")]
-position = Vector2(550, -30)
+position = Vector2(262, 3)
+
+[node name="Caballero" parent="." instance=ExtResource("1_1hamc")]
+position = Vector2(107, 3)
+collision_layer = 2

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d1hovkr3w0aju"
+path="res://.godot/imported/Medieval Music - Medieval Legends.mp3-23b1a356b3f6da7ff56a9ddb11c0ad8b.mp3str"
+
+[deps]
+
+source_file="res://efectos/Fondo/Medieval Music - Medieval Legends.mp3"
+dest_files=["res://.godot/imported/Medieval Music - Medieval Legends.mp3-23b1a356b3f6da7ff56a9ddb11c0ad8b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

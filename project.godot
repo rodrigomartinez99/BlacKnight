@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="BlacKnight"
-run/main_scene="res://main.tscn"
+run/main_scene="res://niveles/ui/logo.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icono/icon.svg"
+config/icon="res://data/imagenes/icono/Icono.PNG"
+
+[autoload]
+
+GLOBAL="*res://data/global/global.gd"
+SceneTransicion="*res://niveles/ui/logo.tscn"
 
 [input]
 
@@ -42,4 +47,5 @@ attack1={
 
 2d_physics/layer_1="player"
 2d_physics/layer_2="enemigos"
-2d_physics/layer_3="suelo"
+2d_physics/layer_3="ataque"
+2d_physics/layer_4="enviroment"
