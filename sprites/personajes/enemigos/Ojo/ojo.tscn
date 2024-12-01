@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://c8osupo8k8ldj"]
+[gd_scene load_steps=16 format=3 uid="uid://c8osupo8k8ldj"]
 
 [ext_resource type="Texture2D" uid="uid://brhblrgjgqbsu" path="res://sprites/personajes/enemigos/Ojo/Ojomotion.png" id="1_d2bki"]
 [ext_resource type="Script" path="res://sprites/personajes/enemigos/Ojo/ojo.gd" id="1_ovil3"]
 [ext_resource type="Texture2D" uid="uid://ruayka4dsp1s" path="res://sprites/personajes/enemigos/Ojo/Run-0002.png" id="2_pb2i3"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_icofv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drule"]
+size = Vector2(20, 12.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vuvjb"]
 atlas = ExtResource("1_d2bki")
@@ -76,29 +77,48 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vvkx"]
-size = Vector2(140.75, 44.5)
+size = Vector2(54.5, 11.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cauph"]
+size = Vector2(4.5, 12.5)
 
 [node name="Ojo" type="CharacterBody2D" groups=["enemies"]]
 scale = Vector2(2, 2)
 collision_layer = 2
-collision_mask = 5
+collision_mask = 9
+platform_floor_layers = 4294901768
+platform_wall_layers = 8
 script = ExtResource("1_ovil3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_icofv")
+position = Vector2(0, -1.25)
+shape = SubResource("RectangleShape2D_drule")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b14jf")
-animation = &"ojo-motion"
+animation = &"ojo-run"
+autoplay = "ojo-motion"
+frame_progress = 0.600576
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Deteccion" type="Area2D" parent="AnimatedSprite2D"]
+collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(58.375, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Deteccion"]
+position = Vector2(32.75, -1.25)
 shape = SubResource("RectangleShape2D_3vvkx")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="RayCast2D" type="RayCast2D" parent="AnimatedSprite2D"]
+position = Vector2(11, 5)
+target_position = Vector2(0, 5)
+collision_mask = 0
+hit_from_inside = true
 
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(7.75, -1.25)
+shape = SubResource("RectangleShape2D_cauph")
+
+[connection signal="body_entered" from="AnimatedSprite2D/Deteccion" to="." method="_on_deteccion_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

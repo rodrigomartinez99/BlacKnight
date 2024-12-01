@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bupcfewc38c6d"
+path="res://.godot/imported/Echoes of Valors - Eric J. Oriol  Epic Music.mp3-e8a744d7375b144b1523c2c9eff8fdfa.mp3str"
+
+[deps]
+
+source_file="res://Musica/Echoes of Valors - Eric J. Oriol  Epic Music.mp3"
+dest_files=["res://.godot/imported/Echoes of Valors - Eric J. Oriol  Epic Music.mp3-e8a744d7375b144b1523c2c9eff8fdfa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
