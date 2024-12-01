@@ -4,7 +4,7 @@
 
 [sub_resource type="Animation" id="Animation_kq2s0"]
 resource_name = "dissolve"
-length = 0.3
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -12,10 +12,10 @@ tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.243137, 0.266667, 0.305882, 0), Color(0.247059, 0.262745, 0.329412, 1)]
+"values": [Color(0.243137, 0.266667, 0.305882, 0), Color(0.290196, 0.333333, 0.45098, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_q6sk8"]
@@ -39,7 +39,7 @@ _data = {
 "dissolve": SubResource("Animation_kq2s0")
 }
 
-[node name="Transicion" type="CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_fvhv6")
 
 [node name="ColorRect" type="ColorRect" parent="."]
