@@ -18,8 +18,8 @@ func _input(event):
 		_go_title_screen()
 
 func _go_title_screen():
-	# Pasamos a la escena de Menú principal
-	SceneTransicion.change_scene(_path_map_scene)
+	# Pasamos a la escena de Menú principal	
+	Transicion.change_scene(_path_map_scene)
 
-func _on_animation_player_animation_finished(anim_name):
+func _on_animation_player_animation_finished(_anim_name):
 	_go_title_screen()

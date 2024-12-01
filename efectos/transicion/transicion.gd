@@ -14,8 +14,6 @@ func change_scene(target: String, show_menu = false):
 	animation.play("dissolve")
 	# Esperamos a que termine la animación
 	await animation.animation_finished
-	# Ocultamos el menu principal
-	#"res://niveles/menu/menu.gd".show_menu(show_menu)
 	# Cargamos la escena
 	get_tree().change_scene_to_file(target)
 	# Mostramos animación (desde un color hacia transparente)
@@ -31,4 +29,5 @@ func change_scene(target: String, show_menu = false):
 func reload_scene():
 	#HealthDashboard.visible = true
 	#HealthDashboard.restart()
+	# Reiniciamos la escena
 	get_tree().reload_current_scene()

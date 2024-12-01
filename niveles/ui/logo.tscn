@@ -25,7 +25,7 @@ _data = {
 }
 
 [node name="Logo" type="Node2D"]
-position = Vector2(577, 348)
+position = Vector2(556, 331)
 script = ExtResource("1_01q3d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
