@@ -1,42 +1,42 @@
 [gd_scene load_steps=16 format=3 uid="uid://c8osupo8k8ldj"]
 
-[ext_resource type="Texture2D" uid="uid://brhblrgjgqbsu" path="res://sprites/personajes/enemigos/Ojo/Ojomotion.png" id="1_d2bki"]
 [ext_resource type="Script" path="res://sprites/personajes/enemigos/Ojo/ojo.gd" id="1_ovil3"]
-[ext_resource type="Texture2D" uid="uid://ruayka4dsp1s" path="res://sprites/personajes/enemigos/Ojo/Run-0002.png" id="2_pb2i3"]
+[ext_resource type="Texture2D" uid="uid://brhblrgjgqbsu" path="res://data/imagenes/enemigos/ojo/Ojomotion.png" id="2_ro7te"]
+[ext_resource type="Texture2D" uid="uid://ruayka4dsp1s" path="res://data/imagenes/enemigos/ojo/Run-0002.png" id="3_meqhp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drule"]
 size = Vector2(20, 12.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vuvjb"]
-atlas = ExtResource("1_d2bki")
+atlas = ExtResource("2_ro7te")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_se1oq"]
-atlas = ExtResource("1_d2bki")
+atlas = ExtResource("2_ro7te")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ub1lg"]
-atlas = ExtResource("1_d2bki")
+atlas = ExtResource("2_ro7te")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_36hxk"]
-atlas = ExtResource("1_d2bki")
+atlas = ExtResource("2_ro7te")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8wmkl"]
-atlas = ExtResource("2_pb2i3")
+atlas = ExtResource("3_meqhp")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4vfq1"]
-atlas = ExtResource("2_pb2i3")
+atlas = ExtResource("3_meqhp")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hxui6"]
-atlas = ExtResource("2_pb2i3")
+atlas = ExtResource("3_meqhp")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xxcr5"]
-atlas = ExtResource("2_pb2i3")
+atlas = ExtResource("3_meqhp")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b14jf"]
@@ -95,10 +95,10 @@ position = Vector2(0, -1.25)
 shape = SubResource("RectangleShape2D_drule")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_b14jf")
-animation = &"ojo-run"
+animation = &"ojo-motion"
 autoplay = "ojo-motion"
-frame_progress = 0.600576
 
 [node name="Deteccion" type="Area2D" parent="AnimatedSprite2D"]
 collision_layer = 2

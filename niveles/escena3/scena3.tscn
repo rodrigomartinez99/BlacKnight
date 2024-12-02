@@ -1,11 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://cighun5v7fboh"]
+[gd_scene load_steps=17 format=3 uid="uid://cighun5v7fboh"]
 
-[ext_resource type="Texture2D" uid="uid://bajr3wbup6ta3" path="res://sprites/objetos/Dungeon Tile Set/Dungeon Tile Set/Dungeon Tile Set.png" id="1_uwnc4"]
-[ext_resource type="Texture2D" uid="uid://dhbremffycmrb" path="res://sprites/objetos/Spikes/Spikes/Idle.png" id="2_1gsax"]
+[ext_resource type="Texture2D" uid="uid://bajr3wbup6ta3" path="res://data/imagenes/objetos/Dungeon Tile Set/Dungeon Tile Set/Dungeon Tile Set.png" id="1_uwnc4"]
+[ext_resource type="Script" path="res://niveles/escena3/scena3.gd" id="1_vhc7y"]
+[ext_resource type="Texture2D" uid="uid://dhbremffycmrb" path="res://data/imagenes/objetos/Spikes/Spikes/Idle.png" id="2_1gsax"]
+[ext_resource type="PackedScene" uid="uid://c8osupo8k8ldj" path="res://sprites/personajes/enemigos/Ojo/ojo.tscn" id="2_ce33n"]
 [ext_resource type="AudioStream" uid="uid://d1hovkr3w0aju" path="res://efectos/Fondo/Medieval Music - Medieval Legends.mp3" id="3_jtvng"]
 [ext_resource type="PackedScene" uid="uid://un8ioippgal5" path="res://sprites/personajes/jugador/jugador.tscn" id="4_8ba3w"]
 [ext_resource type="PackedScene" uid="uid://c67528w5rwnsa" path="res://efectos/transicion/puerta/puerta.tscn" id="5_1s3dd"]
 [ext_resource type="PackedScene" uid="uid://cch1u65dxffd3" path="res://efectos/camara/camara.tscn" id="6_c81po"]
+[ext_resource type="PackedScene" uid="uid://b65bw4rf3ahna" path="res://sprites/personajes/enemigos/Boss/dragon.tscn" id="7_4fvbe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ra37"]
 texture = ExtResource("1_uwnc4")
@@ -847,7 +850,15 @@ physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_44ntn")
 sources/1 = SubResource("TileSetAtlasSource_8u5jd")
 
+[sub_resource type="Curve2D" id="Curve2D_lahwj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1715, 97, 0, 0, 0, 0, 1715, 141, 0, 0, 0, 0, 1271, 140, 0, 0, 0, 0, 1272, 101, 0, 0, 0, 0, 1715, 97)
+}
+point_count = 5
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_vhc7y")
+enemy = ExtResource("2_ce33n")
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(2.4, 2.4)
@@ -863,11 +874,6 @@ format = 2
 layer_0/name = "terreno"
 layer_0/tile_data = PackedInt32Array(983059, 655360, 10, 983060, 655360, 10, 917524, 655360, 10, 917525, 655360, 10, 983061, 655360, 10, 983062, 655360, 10, 851989, 655360, 10, 65537, 655360, 14, 65541, 655360, 14, 65545, 655360, 14, 65549, 655360, 14, 65553, 655360, 14, 65557, 655360, 14, 65561, 655360, 14, 65565, 655360, 14, 65569, 655360, 14, 65573, 655360, 14, 65577, 655360, 14, 65581, 655360, 14, 65585, 655360, 14, 65589, 655360, 14, 65594, 720896, 14, 65593, 655360, 14, 65588, 851968, 14, 65584, 851968, 14, 65580, 851968, 14, 65576, 851968, 14, 65572, 851968, 14, 65568, 851968, 14, 65564, 851968, 14, 65560, 851968, 14, 65556, 851968, 14, 65592, 851968, 14, 65587, 786432, 14, 65583, 786432, 14, 65579, 786432, 14, 65575, 786432, 14, 65571, 786432, 14, 65567, 786432, 14, 65563, 786432, 14, 65559, 786432, 14, 65555, 786432, 14, 65591, 786432, 14, 65586, 720896, 14, 65590, 720896, 14, 65582, 720896, 14, 65578, 720896, 14, 65574, 720896, 14, 65570, 720896, 14, 65566, 720896, 14, 65562, 720896, 14, 65558, 720896, 14, 65554, 720896, 14, 65595, 786432, 14, 65552, 851968, 14, 65548, 851968, 14, 65544, 851968, 14, 65540, 851968, 14, 65538, 720896, 14, 65542, 720896, 14, 65546, 720896, 14, 65550, 720896, 14, 65551, 786432, 14, 65547, 786432, 14, 65543, 786432, 14, 65539, 786432, 14, 65596, 851968, 14, 262149, 655360, 3, 524308, 655360, 3, 524309, 720896, 3, 262150, 720896, 3, 589844, 655360, 4, 327685, 655360, 4, 327686, 720896, 4, 589845, 720896, 4, 262201, 786432, 5, 655406, 786432, 5, 852025, 786432, 5, 327718, 786432, 5, 852005, 786432, 5, 589842, 786432, 5, 851993, 786432, 5, 131094, 786432, 5, 262146, 786432, 5, 393223, 786432, 5, 851972, 786432, 5, 524325, 458752, 6, 589878, 458752, 6, 720943, 458752, 6, 917542, 458752, 6, 327733, 458752, 6, 917530, 458752, 6, 655379, 458752, 6, 196631, 458752, 6, 458760, 458752, 6, 524289, 786432, 9, 393232, 262144, 12, 393235, 262144, 12, 393236, 393216, 12, 393239, 393216, 12, 393237, 262144, 12, 393234, 393216, 12, 393238, 327680, 12, 393233, 327680, 12, 1048584, 1, 0, 1048585, 1, 0, 983076, 1, 0, 983080, 1, 0, 983041, 851968, 11, 917505, 851968, 10)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_jtvng")
-volume_db = -20.0
-autoplay = true
-
 [node name="Caballero" parent="." instance=ExtResource("4_8ba3w")]
 position = Vector2(104, 604)
 
@@ -876,5 +882,29 @@ position = Vector2(57, 583)
 _path_to_scene = "res://niveles/escena2/scena2.tscn"
 
 [node name="Camara" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_c81po")]
+visible = false
 position = Vector2(220, 598)
 player = NodePath("../Caballero")
+
+[node name="Dragon" parent="." instance=ExtResource("7_4fvbe")]
+position = Vector2(2056, 461)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_lahwj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(1715, 97)
+rotation = 1.5708
+
+[node name="Config" type="Node" parent="."]
+
+[node name="Timer" type="Timer" parent="Config"]
+wait_time = 0.9
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Config/Timer"]
+stream = ExtResource("3_jtvng")
+volume_db = -20.0
+autoplay = true
+
+[connection signal="timeout" from="Config/Timer" to="." method="_on_timer_timeout"]
