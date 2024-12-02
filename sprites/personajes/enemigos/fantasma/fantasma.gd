@@ -35,15 +35,14 @@ func damage_ctrl(damage: int)->void:
 		queue_free()
 		
 func _on_area_2d_body_entered(body):
-	if body is Player:	
-		$AnimatedSprite2D.set_animation("ojo-run")
-		
-
-func _on_deteccion_body_entered(body):
 	if body is Player and health_ojo > 0:
 		body.damage_ctrl()
+
+func _on_deteccion_body_entered(body):
+	if body is Player:	
+		$AnimatedSprite2D.set_animation("fantasma-ataque")	
 		
 
 func _on_deteccion_body_exited(body):
 	if not body:
-		$AnimatedSprite2D.set_animation("ojo-motion")
+		$AnimatedSprite2D.set_animation("fantasma-walk")

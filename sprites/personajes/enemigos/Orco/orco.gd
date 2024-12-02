@@ -32,20 +32,23 @@ func damage_ctrl(damage: int)->void:
 		$forma.set_deferred("disabled",true)
 		gravity_orco = 0
 		GLOBAL.score += score_orco
-		$AnimatedSprite2D.set_animation("death-orc")
-		await $AnimatedSprite2D.animation_finished
-		queue_free()
+		if $AnimatedSprite2D.animation != "death-orc":
+			$AnimatedSprite2D.play("death-orc")
+			await $AnimatedSprite2D.animation_finished
+			queue_free()
 		
 func _on_area_2d_body_entered(body):
-	if body is Player:	
-		$AnimatedSprite2D.set_animation("ataque1-orc")
-		
+	if body is Player and health_orco > 0:
+		body.damage_ctrl()		
 
 func _on_deteccion_body_entered(body):
-	if body is Player and health_orco > 0:
-		body.damage_ctrl()
+	if body is Player:	
+		$AnimatedSprite2D.set_animation("ataque1-orc")
 		
 
 func _on_deteccion_body_exited(body):
 	if not body:
 		$AnimatedSprite2D.set_animation("orc-walk")
+
+
+

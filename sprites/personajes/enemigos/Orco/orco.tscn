@@ -221,9 +221,8 @@ shape = SubResource("RectangleShape2D_cccbc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_103ys")
-animation = &"orc-walk"
+animation = &"ataque1-orc"
 autoplay = "orc-walk"
-frame_progress = 0.622285
 
 [node name="RayCast2D" type="RayCast2D" parent="AnimatedSprite2D"]
 position = Vector2(9, 0)
@@ -244,6 +243,7 @@ collision_layer = 4
 position = Vector2(15, 0)
 shape = SubResource("RectangleShape2D_ecxpv")
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="AnimatedSprite2D/Deteccion" to="." method="_on_deteccion_body_entered"]
 [connection signal="body_exited" from="AnimatedSprite2D/Deteccion" to="." method="_on_deteccion_body_exited"]
 [connection signal="body_entered" from="ataque" to="." method="_on_area_2d_body_entered"]
