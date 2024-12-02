@@ -1,10 +1,10 @@
 extends CharacterBody2D
-class_name Enemy
+class_name Fantasma
 
 @export_category("Config")
 @export_group("Opciones")
-@export var health_ojo: int = 1
-@export var score_ojo: int = 100
+@export var health_ojo: int = 5
+@export var score_ojo: int = 200
 
 @export_group("Movimiento")
 @export var speed_ojo: int = 16
