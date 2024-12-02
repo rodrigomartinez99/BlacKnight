@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck418mat72dla"]
+
+[sub_resource type="Curve2D" id="Curve2D_lahwj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1715, 97, 0, 0, 0, 0, 1715, 141, 0, 0, 0, 0, 1271, 140, 0, 0, 0, 0, 1272, 101, 0, 0, 0, 0, 1715, 97)
+}
+point_count = 5
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_lahwj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(1715, 97)
+rotation = 1.5708
+
+[node name="_Timer_431052" type="Timer" parent="PathFollow2D"]
+wait_time = 0.2
+one_shot = true

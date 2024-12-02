@@ -49,6 +49,9 @@ attack1={
 2d_physics/layer_2="enemigos"
 2d_physics/layer_3="ataque"
 2d_physics/layer_4="enviroment"
+2d_physics/layer_5="deteccion"
+2d_physics/layer_6="dragon"
+2d_physics/layer_7="muerte"
 
 [rendering]
 

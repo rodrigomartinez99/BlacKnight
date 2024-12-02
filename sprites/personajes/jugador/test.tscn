@@ -1,10 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmjsdmvv2xpe6"]
+[gd_scene load_steps=7 format=3 uid="uid://dmjsdmvv2xpe6"]
 
 [ext_resource type="PackedScene" uid="uid://un8ioippgal5" path="res://sprites/personajes/jugador/jugador.tscn" id="1_1hamc"]
 [ext_resource type="PackedScene" uid="uid://c8osupo8k8ldj" path="res://sprites/personajes/enemigos/Ojo/ojo.tscn" id="2_437s6"]
+[ext_resource type="PackedScene" uid="uid://c7dti7u1ndw18" path="res://sprites/personajes/enemigos/Orco/orco.tscn" id="3_8yakm"]
+[ext_resource type="PackedScene" uid="uid://c6ciny8a6d1ms" path="res://efectos/fuego/fuego.tscn" id="4_pfnps"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bikxd"]
-size = Vector2(354.156, 25)
+size = Vector2(431.156, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_snms6"]
 
@@ -13,20 +15,32 @@ position = Vector2(34, 179)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 collision_layer = 8
-collision_mask = 3
+collision_mask = 67
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(275.078, 26)
+position = Vector2(236.578, 26)
 shape = SubResource("RectangleShape2D_bikxd")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(356, 2)
+position = Vector2(219, 3)
+shape = SubResource("RectangleShape2D_snms6")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(293, 2)
 shape = SubResource("RectangleShape2D_snms6")
 
 [node name="Ojo" parent="." instance=ExtResource("2_437s6")]
-position = Vector2(262, 3)
+position = Vector2(125, 2)
 
 [node name="Caballero" parent="." instance=ExtResource("1_1hamc")]
-position = Vector2(107, 3)
+position = Vector2(362, 3)
 collision_layer = 2
+speed = null
+gravity = null
+
+[node name="Orco" parent="." instance=ExtResource("3_8yakm")]
+position = Vector2(405, 6)
+
+[node name="Fuego" parent="." instance=ExtResource("4_pfnps")]
+position = Vector2(359, -80)
