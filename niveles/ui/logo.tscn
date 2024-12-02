@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dcvov5ldloom"]
 
 [ext_resource type="Script" path="res://niveles/ui/logo.gd" id="1_01q3d"]
-[ext_resource type="Texture2D" uid="uid://b2fi2nclffceh" path="res://data/imagenes/Inicio.png" id="1_m4i1e"]
+[ext_resource type="Texture2D" uid="uid://b2fi2nclffceh" path="res://data/imagenes/inicio/Inicio.png" id="1_m4i1e"]
 
 [sub_resource type="Animation" id="Animation_m2v7g"]
 resource_name = "do_splash"

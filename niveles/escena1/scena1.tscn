@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://co64vskqj3m2w"]
 
 [ext_resource type="AudioStream" uid="uid://0i13or11jbbk" path="res://efectos/Fondo/Fantasy Medieval Music - Dance with Dragons.mp3" id="1_iy4d3"]
-[ext_resource type="Texture2D" uid="uid://bajr3wbup6ta3" path="res://sprites/objetos/Dungeon Tile Set/Dungeon Tile Set/Dungeon Tile Set.png" id="1_p5axm"]
-[ext_resource type="Texture2D" uid="uid://dhbremffycmrb" path="res://sprites/objetos/Spikes/Spikes/Idle.png" id="2_5ie4k"]
+[ext_resource type="Texture2D" uid="uid://bajr3wbup6ta3" path="res://data/imagenes/objetos/Dungeon Tile Set/Dungeon Tile Set/Dungeon Tile Set.png" id="1_p5axm"]
+[ext_resource type="Texture2D" uid="uid://dhbremffycmrb" path="res://data/imagenes/objetos/Spikes/Spikes/Idle.png" id="2_5ie4k"]
 [ext_resource type="PackedScene" uid="uid://un8ioippgal5" path="res://sprites/personajes/jugador/jugador.tscn" id="4_1jqkq"]
 [ext_resource type="PackedScene" uid="uid://cch1u65dxffd3" path="res://efectos/camara/camara.tscn" id="5_nxkje"]
 [ext_resource type="PackedScene" uid="uid://c67528w5rwnsa" path="res://efectos/transicion/puerta/puerta.tscn" id="6_ethls"]

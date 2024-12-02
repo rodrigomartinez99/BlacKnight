@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://c846e6vdb4su2"]
 
-[ext_resource type="Texture2D" uid="uid://bajr3wbup6ta3" path="res://sprites/objetos/Dungeon Tile Set/Dungeon Tile Set/Dungeon Tile Set.png" id="1_y6r24"]
-[ext_resource type="Texture2D" uid="uid://dhbremffycmrb" path="res://sprites/objetos/Spikes/Spikes/Idle.png" id="2_oki6u"]
+[ext_resource type="Texture2D" uid="uid://bajr3wbup6ta3" path="res://data/imagenes/objetos/Dungeon Tile Set/Dungeon Tile Set/Dungeon Tile Set.png" id="1_y6r24"]
+[ext_resource type="Texture2D" uid="uid://dhbremffycmrb" path="res://data/imagenes/objetos/Spikes/Spikes/Idle.png" id="2_oki6u"]
 [ext_resource type="AudioStream" uid="uid://dnn6dxek4hkhb" path="res://efectos/Fondo/Celtic Music - Prophecy.mp3" id="3_s4ku4"]
 [ext_resource type="PackedScene" uid="uid://un8ioippgal5" path="res://sprites/personajes/jugador/jugador.tscn" id="4_8l2uf"]
 [ext_resource type="PackedScene" uid="uid://c67528w5rwnsa" path="res://efectos/transicion/puerta/puerta.tscn" id="5_eu2oy"]
