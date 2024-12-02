@@ -315,7 +315,7 @@ size = Vector2(2.14286, 0.571429)
 
 [node name="Caballero" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1
-position = Vector2(0, 1.35525e-20)
+position = Vector2(24, -12)
 scale = Vector2(7, 7)
 collision_mask = 74
 platform_floor_layers = 4294901768
@@ -332,6 +332,7 @@ animation = &"ataque1"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 2.98023e-08)
 shape = SubResource("RectangleShape2D_ep4r3")
 
@@ -350,6 +351,7 @@ stream = ExtResource("10_fb5fs")
 stream = ExtResource("11_s65h7")
 
 [node name="espada" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
 collision_mask = 2
 
@@ -362,8 +364,8 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="salto"]
+visible = false
 position = Vector2(0, 1.71429)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ysccb")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

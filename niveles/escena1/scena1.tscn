@@ -462,9 +462,6 @@ player = NodePath("../Caballero")
 position = Vector2(2209, 583)
 _path_to_scene = "res://niveles/escena2/scena2.tscn"
 
-[node name="Orco" parent="." instance=ExtResource("7_rhsrc")]
-position = Vector2(88, 608)
-
 [node name="Fantasma" parent="." instance=ExtResource("8_ccdri")]
 position = Vector2(473, 138)
 
@@ -499,5 +496,8 @@ collision_layer = 64
 [node name="Gui" parent="." instance=ExtResource("11_vqi0n")]
 
 [node name="Caballero" parent="." node_paths=PackedStringArray("gui") instance=ExtResource("4_1jqkq")]
-position = Vector2(246, 481)
+position = Vector2(247, 487)
 gui = NodePath("../Gui")
+
+[node name="Orco" parent="." instance=ExtResource("7_rhsrc")]
+position = Vector2(87, 604)
